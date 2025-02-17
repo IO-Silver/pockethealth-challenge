@@ -10,10 +10,11 @@ class PatientRecordsController < ApplicationController
   end
 
   def create
-    record = PatientRecord.create!(record_params)
+    record = PatientRecord.create!(id: UUID4.new, dicom: record_params[:dicom])
     render plain: record.id, status: created
   end
 
   def record_params
     params.permit!(:dicom)
+  end
 end

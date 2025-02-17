@@ -40,6 +40,8 @@ Rails.application.configure do
 
   config.active_storage.service = :local
 
+  config.generators { |g| g.orm :active_record, primary_key_type: :uuid }
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
