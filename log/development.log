@@ -1,0 +1,64 @@
+  [1m[35m (107.4ms)[0m  [1m[35mCREATE DATABASE "pockethealth_challenge_development" ENCODING = 'unicode' /*application='PockethealthChallenge'*/[0m
+  [1m[35m (107.9ms)[0m  [1m[35mCREATE DATABASE "pockethealth_challenge_development" ENCODING = 'unicode' /*application='PockethealthChallenge'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='PockethealthChallenge'*/[0m
+  [1m[35m (627.5ms)[0m  [1m[35mCREATE DATABASE "pockethealth_challenge_development" ENCODING = 'unicode' /*application='PockethealthChallenge'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='PockethealthChallenge'*/[0m
+  [1m[35m (206.8ms)[0m  [1m[35mCREATE DATABASE "pockethealth_challenge_test" ENCODING = 'unicode' /*application='PockethealthChallenge'*/[0m
+  [1m[35m (126.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (40.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-02-17 19:11:14.654658', '2025-02-17 19:11:14.654663') RETURNING "key" /*application='PockethealthChallenge'*/[0m
+Migrating to CreateActiveStorageTables (20250217184629)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='PockethealthChallenge'*/[0m
+  [1m[35m (50.9ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key") /*application='PockethealthChallenge'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (41.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id") /*application='PockethealthChallenge'*/[0m
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='PockethealthChallenge'*/[0m
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest") /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250217184629') RETURNING "version" /*application='PockethealthChallenge'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='PockethealthChallenge'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
+DICOM: DICOM string successfully parsed.
+DICOM: DICOM file successfully read: /Users/Io/pockethealth-challenge/test/fixtures/files/DICOMDIR
+DICOM: Expected a file, got a directory: /Users/Io/pockethealth-challenge/test/fixtures/files/PA000001/ST000001/SE000002
+DICOM: Reading DICOM file failed: /Users/Io/pockethealth-challenge/test/fixtures/files/PA000001/ST000001/SE000002
+DICOM: DICOM string successfully parsed.
+DICOM: DICOM file successfully read: /Users/Io/pockethealth-challenge/test/fixtures/files/PA000001/ST000001/SE000002/IM000001
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PockethealthChallenge'*/[0m
+Migrating to CreatePatientRecords (20250217194000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='PockethealthChallenge'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='PockethealthChallenge'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PockethealthChallenge'*/[0m
+Migrating to CreatePatientRecords (20250217194000)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PockethealthChallenge'*/[0m
+Migrating to CreatePatientRecords (20250217194000)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PockethealthChallenge'*/[0m
+Migrating to CreatePatientRecords (20250217194000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='PockethealthChallenge'*/[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "patient_records" ("id" uuid NOT NULL PRIMARY KEY, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250217194000') RETURNING "version" /*application='PockethealthChallenge'*/[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT /*application='PockethealthChallenge'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8641812598185061470) /*application='PockethealthChallenge'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PockethealthChallenge'*/[0m
