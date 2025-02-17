@@ -7,9 +7,9 @@ class PatientRecord < ApplicationRecord
   # If the record has the tag, return it
   # Otherwise, return nil
   def get_tag_value(tag)
-    byebug
     dcm = DObject.read(get_dicom_path)
     unless dcm[tag].nil?
+      # Rails doesn't like rendering numbers
       return dcm[tag].value
     else
       return nil
@@ -17,7 +17,6 @@ class PatientRecord < ApplicationRecord
   end
 
   def get_dicom_path
-    byebug
     ActiveStorage::Blob.service.path_for(dicom.key)
   end
 end

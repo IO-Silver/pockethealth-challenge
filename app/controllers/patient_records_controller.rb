@@ -1,7 +1,7 @@
 class PatientRecordsController < ApplicationController
   def headers
     record = PatientRecord.find(params[:id])
-    render plain: record.get_tag_value(params[:tag]) if record
+    render json: record.get_tag_value(params[:tag]) if record
   end
 
   def image
@@ -11,10 +11,10 @@ class PatientRecordsController < ApplicationController
 
   def create
     record = PatientRecord.create!(id: UUID4.new, dicom: record_params[:dicom])
-    render plain: record.id, status: created
+    render plain: record.id, status: :created
   end
 
   def record_params
-    params.permit!(:dicom)
+    params.permit(:dicom)
   end
 end
