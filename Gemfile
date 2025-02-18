@@ -34,10 +34,6 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-
-
 gem "uuid4", "~> 1.4"
-
 gem "dicom", "~> 0.9.8"
-
 gem "byebug", "~> 11.1"
