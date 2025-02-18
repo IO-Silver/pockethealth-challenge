@@ -9,7 +9,9 @@ This is the environment that the challenge was written in.  This will require `b
 
 #### Ruby
 Install the Ruby environment manager
-`brew install rbenv ruby-build`
+```
+brew install rbenv ruby-build
+```
 
 Download and install Ruby version 3.3.4, then set it to your globally-used version
 ```
@@ -25,7 +27,9 @@ rails --version
 
 #### ImageMagick
 This is the step that failed for me (my Mac is a little too old) but hopefully it will succeed for you!
-`brew install imagemagick`
+```
+brew install imagemagick
+```
 
 
 ## Initialization
