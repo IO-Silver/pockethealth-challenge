@@ -5,7 +5,7 @@ This small API is built to store and display DICOM files.
 
 ## Installation
 ### For MacOS
-This is the environment that the challenge was written in.  This will require `brew`, which can be installed from (here)[https://brew.sh]
+This is the environment that the challenge was written in.  This will require `brew`, which can be installed from [here](https://brew.sh).
 
 ##### Ruby
 Install the Ruby environment manager
