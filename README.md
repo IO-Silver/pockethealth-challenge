@@ -7,7 +7,7 @@ This small API is built to store and display DICOM files.
 ### For MacOS
 This is the environment that the challenge was written in.  This will require `brew`, which can be installed from [here](https://brew.sh).
 
-##### Ruby
+#### Ruby
 Install the Ruby environment manager
 `brew install rbenv ruby-build`
 
@@ -23,7 +23,7 @@ gem install rails
 rails --version
 ```
 
-##### ImageMagick
+#### ImageMagick
 This is the step that failed for me (my Mac is a little too old) but hopefully it will succeed for you!
 `brew install imagemagick`
 
@@ -40,26 +40,26 @@ Now you should be able to submit requests against `localhost:3000`
 Using cURL, you can send these requests to the API and receive the corresponding responses
 ### POST: Create a new PatientRecord
 This will create the db entry for the file, and return its id to you.
-##### Request
+#### Request
 `curl -F dicom=@path/to/local/dicom/file localhost:3000/patient_records`
 
-##### Response
+#### Response
 `ba3c7364-399b-43ed-8e7b-ad33fb81e98f`
 
 ### GET: Request a Record's Attribute Tag
 With a record's id, you can request attributes by passing in the `tag` query parameter
-##### Request
+#### Request
 `curl localhost:3000/patient_records/ba3c7364-399b-43ed-8e7b-ad33fb81e98f/headers?tag=0010,0010`
 
-##### Response
+#### Response
 `NAYYAR^HARSH`
 
 ### GET: Request a Record's image
 #### WARNING: Unfortunately, I could not test this part of my solution, as my laptop is incompatible with newer ImageMagick builds (upon which the dicom gem relies)
-##### Request
+#### Request
 `curl localhost:3000/patient_records/ba3c7364-399b-43ed-8e7b-ad33fb81e98f/image`
 
-##### Response
+#### Response
 `The image data in png format`
 
 
